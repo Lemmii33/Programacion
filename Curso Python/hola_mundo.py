@@ -2,3 +2,4 @@
 print ('Hola Mundo')
 #tipos 
 print (type('hola'))
+print (type('hola'))
