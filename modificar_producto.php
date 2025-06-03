@@ -93,6 +93,8 @@ function eliminar(btn) {
     }
 }
 </script>
-
+<div style="text-align: center; margin-top: 30px;">
+    <a class="btn" href="index.php">🔙 Volver al inicio</a>
+</div>
 </body>
 </html>

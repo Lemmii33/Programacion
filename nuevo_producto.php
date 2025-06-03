@@ -52,6 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <button type="submit">Guardar Producto</button>
 </form>
-
+<div style="text-align: center; margin-top: 30px;">
+    <a class="btn" href="index.php">🔙 Volver al inicio</a>
+</div>
 </body>
 </html>
