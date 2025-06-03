@@ -10,7 +10,7 @@
 <h1>Panel de Gestión de Productos</h1>
 
 <div class="resumen">
-    <p>Elige una acción para realizar sobre la tabla <strong>productos</strong>:</p>
+    <p>Elige una acción:</p>
 </div>
 
 <div style="text-align:center; margin-top: 30px;">
