@@ -24,7 +24,7 @@ $conn->close();
     </style>
 </head>
 <body>
-
+<div class="container">
 <h1>Modificar o Eliminar Productos</h1>
 
 <table>
@@ -95,6 +95,7 @@ function eliminar(btn) {
 </script>
 <div style="text-align: center; margin-top: 30px;">
     <a class="btn" href="index.php">🔙 Volver al inicio</a>
+</div>
 </div>
 </body>
 </html>
