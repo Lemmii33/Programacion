@@ -19,7 +19,7 @@ $totalProductos = 0;
 <body>
 
 <div class="container">
-    <h1>Lista de Productos de Natalia</h1>
+    <h1>Lista de Productos</h1>
 
     <?php
     if ($resultado->num_rows > 0) {
