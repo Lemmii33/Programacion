@@ -13,13 +13,13 @@ $totalProductos = 0;
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Productos Marcos</title>
+    <title>Lista de Productos</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
 <div class="container">
-    <h1>Lista de Productos</h1>
+    <h1>Lista de Productos Marcos carahuevo</h1>
 
     <?php
     if ($resultado->num_rows > 0) {
