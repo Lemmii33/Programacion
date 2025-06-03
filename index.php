@@ -19,16 +19,6 @@
     <a class="btn" href="modificar_producto.php">✏️ Modificar / Eliminar Producto</a>
     <a class="btn" href="total_ventas.php">💰 Total de Ventas</a>
 </div>
-<body>
-
-<div class="container">
-    <h1>Lista de Productos</h1>
-
-    <!-- tabla, resumen, botones, etc. -->
-</div>
-
-</body>
-
 </body>
 </html>
 

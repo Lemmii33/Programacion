@@ -30,14 +30,5 @@ $conn->close();
 </div>
 
 </body>
-<body>
-
-<div class="container">
-    <h1>Lista de Productos</h1>
-
-    <!-- tabla, resumen, botones, etc. -->
-</div>
-
-</body>
 
 </html>
