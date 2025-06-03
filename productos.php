@@ -47,4 +47,14 @@ $conn->close();
     <a class="btn" href="index.php">🔙 Volver al inicio</a>
 </div>
 </body>
+<body>
+
+<div class="container">
+    <h1>Lista de Productos</h1>
+
+    <!-- tabla, resumen, botones, etc. -->
+</div>
+
+</body>
+
 </html>

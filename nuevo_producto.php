@@ -55,5 +55,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div style="text-align: center; margin-top: 30px;">
     <a class="btn" href="index.php">🔙 Volver al inicio</a>
 </div>
+<body>
+
+<div class="container">
+    <h1>Lista de Productos</h1>
+
+    <!-- tabla, resumen, botones, etc. -->
+</div>
+
+</body>
+
 </body>
 </html>

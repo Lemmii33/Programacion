@@ -80,3 +80,10 @@ button, .btn {
 button:hover, .btn:hover {
     background-color: #0056b3;
 }
+
+/* Contenedor principal centrado */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
