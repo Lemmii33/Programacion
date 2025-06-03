@@ -13,7 +13,7 @@ $totalProductos = 0;
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Productos</title>
+    <title>Lista de Productos Marcos</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
