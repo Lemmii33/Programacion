@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Lista de Productos: pruebaaa</h1>
+<h1>Lista de Productos: gello</h1>
 
 <?php
 include 'conexion.php';
