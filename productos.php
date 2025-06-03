@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Lista de Productos: HOLA BARTOLO</h1>
+<h1>Lista de Productos: HOLA PABLO</h1>
 
 <?php
 include 'conexion.php';
