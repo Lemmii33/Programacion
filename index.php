@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-
+<div class="container">
 <h1>Panel de Gestión de Productos</h1>
 
 <div class="resumen">
@@ -18,6 +18,7 @@
     <a class="btn" href="nuevo_producto.php">➕ Añadir Producto</a>
     <a class="btn" href="modificar_producto.php">✏️ Modificar / Eliminar Producto</a>
     <a class="btn" href="total_ventas.php">💰 Total de Ventas</a>
+</div>
 </div>
 </body>
 </html>
