@@ -5,6 +5,7 @@ $sql = "SELECT Id, Nombre, Descripcion, Precio, Vendido FROM productos";
 $resultado = $conn->query($sql);
 
 $sumaVendidos = 0;
+$sumaTotal = 0;
 $contadorVendidos = 0;
 $totalProductos = 0;
 ?>
@@ -28,6 +29,7 @@ $totalProductos = 0;
 
         while ($fila = $resultado->fetch_assoc()) {
             $totalProductos++;
+            $sumaTotal += $fila['Precio'];
 
             echo "<tr>";
             echo "<td>" . $fila['Id'] . "</td>";
@@ -45,11 +47,27 @@ $totalProductos = 0;
 
         $porcentaje = $totalProductos > 0 ? ($contadorVendidos / $totalProductos) * 100 : 0;
 
+        // Clase de color para la barra de progreso
+        if ($porcentaje >= 80) {
+            $barraClase = "progress-bar high";
+        } elseif ($porcentaje >= 50) {
+            $barraClase = "progress-bar medium";
+        } else {
+            $barraClase = "progress-bar low";
+        }
+
         echo "</table>";
         echo "<div class='resumen'>";
         echo "<p><strong>Artículos vendidos:</strong> $contadorVendidos de $totalProductos</p>";
         echo "<p><strong>Total vendido:</strong> " . number_format($sumaVendidos, 2) . " €</p>";
+        echo "<p><strong>Total potencial:</strong> " . number_format($sumaTotal, 2) . " €</p>";
         echo "<p><strong>Porcentaje de ventas:</strong> " . number_format($porcentaje, 2) . " %</p>";
+
+        // Barra de progreso visual
+        echo "<div class='progress-container'>";
+        echo "<div class='$barraClase' style='width: " . $porcentaje . "%;'>" . number_format($porcentaje, 0) . "%</div>";
+        echo "</div>";
+
         echo "</div>";
     } else {
         echo "<div class='resumen'>No hay productos en la base de datos.</div>";
@@ -65,3 +83,4 @@ $totalProductos = 0;
 
 </body>
 </html>
+
