@@ -47,7 +47,6 @@ $totalProductos = 0;
 
         $porcentaje = $totalProductos > 0 ? ($contadorVendidos / $totalProductos) * 100 : 0;
 
-        // Clase de color para la barra de progreso
         if ($porcentaje >= 80) {
             $barraClase = "progress-bar high";
         } elseif ($porcentaje >= 50) {
@@ -63,9 +62,8 @@ $totalProductos = 0;
         echo "<p><strong>Total potencial:</strong> " . number_format($sumaTotal, 2) . " €</p>";
         echo "<p><strong>Porcentaje de ventas:</strong> " . number_format($porcentaje, 2) . " %</p>";
 
-        // Barra de progreso visual
         echo "<div class='progress-container'>";
-        echo "<div class='$barraClase' style='width: " . $porcentaje . "%;'>" . number_format($porcentaje, 0) . "%</div>";
+        echo "<div class='$barraClase' style='width: " . max($porcentaje, 5) . "%;'>" . number_format($porcentaje, 0) . "%</div>";
         echo "</div>";
 
         echo "</div>";
@@ -83,4 +81,3 @@ $totalProductos = 0;
 
 </body>
 </html>
-
