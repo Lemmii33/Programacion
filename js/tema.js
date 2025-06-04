@@ -10,7 +10,6 @@ function alternarTema() {
     }
 }
 
-// Al cargar, aplica el tema guardado
 document.addEventListener("DOMContentLoaded", () => {
     if (localStorage.getItem("modo") === "oscuro") {
         document.body.classList.add("oscuro");
