@@ -21,7 +21,7 @@
     </div>
 
     <div style="text-align: center; margin-top: 40px;">
-        <button class="btn" id="toggle-tema">🌙 Cambiar tema</button>
+        <button class="btn" onclick="alternarTema()">🌙 Cambiar tema</button>
     </div>
 </div>
 
@@ -43,6 +43,6 @@
         });
     });
 </script>
-
+<script src="js/tema.js"></script>
 </body>
 </html>
