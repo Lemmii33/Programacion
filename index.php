@@ -24,7 +24,7 @@
         <button class="btn" onclick="alternarTema()">🌙 Cambiar tema</button>
     </div>
 </div>
-
+<script src="tema.js"></script>
 <script>
     // Alterna entre modo claro/oscuro
     document.addEventListener("DOMContentLoaded", () => {
@@ -43,6 +43,6 @@
         });
     });
 </script>
-<script src="tema.js"></script>
+
 </body>
 </html>
