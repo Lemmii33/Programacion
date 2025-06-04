@@ -61,11 +61,9 @@ $totalProductos = 0;
         echo "<p><strong>Total vendido:</strong> " . number_format($sumaVendidos, 2) . " €</p>";
         echo "<p><strong>Total potencial:</strong> " . number_format($sumaTotal, 2) . " €</p>";
         echo "<p><strong>Porcentaje de ventas:</strong> " . number_format($porcentaje, 2) . " %</p>";
-
         echo "<div class='progress-container'>";
         echo "<div class='$barraClase' style='width: " . max($porcentaje, 5) . "%;'>" . number_format($porcentaje, 0) . "%</div>";
         echo "</div>";
-
         echo "</div>";
     } else {
         echo "<div class='resumen'>No hay productos en la base de datos.</div>";
@@ -76,8 +74,10 @@ $totalProductos = 0;
 
     <div style="text-align: center; margin-top: 30px;">
         <a class="btn" href="index.php">🔙 Volver al inicio</a>
+        <button class="btn" onclick="alternarTema()">🌙 Cambiar tema</button>
     </div>
 </div>
 
+<script src="js/tema.js"></script>
 </body>
 </html>

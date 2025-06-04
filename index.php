@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Productos</title>
-    <link rel="stylesheet" href="css/estilos.css">
+   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 <div class="container">
@@ -24,7 +24,7 @@
         <button class="btn" onclick="alternarTema()">🌙 Cambiar tema</button>
     </div>
 </div>
-<script src="tema.js"></script>
+<script src="js/tema.js"></script>
 <script>
     // Alterna entre modo claro/oscuro
     document.addEventListener("DOMContentLoaded", () => {
