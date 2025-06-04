@@ -24,8 +24,14 @@ $totalProductos = 0;
 
     <?php
     if ($resultado->num_rows > 0) {
-        echo "<table>";
-        echo "<tr><th>ID</th><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Vendido</th></tr>";
+        echo "<table id='tabla-productos' data-orden='asc' data-columna='-1'>";
+        echo "<thead><tr>";
+        echo "<th onclick='ordenarTabla(0, this)'>ID</th>";
+        echo "<th onclick='ordenarTabla(1, this)'>Nombre</th>";
+        echo "<th onclick='ordenarTabla(2, this)'>Descripción</th>";
+        echo "<th onclick='ordenarTabla(3, this)'>Precio</th>";
+        echo "<th onclick='ordenarTabla(4, this)'>Vendido</th>";
+        echo "</tr></thead><tbody>";
 
         while ($fila = $resultado->fetch_assoc()) {
             $totalProductos++;
@@ -45,6 +51,8 @@ $totalProductos = 0;
             }
         }
 
+        echo "</tbody></table>";
+
         $porcentaje = $totalProductos > 0 ? ($contadorVendidos / $totalProductos) * 100 : 0;
 
         if ($porcentaje >= 80) {
@@ -55,7 +63,6 @@ $totalProductos = 0;
             $barraClase = "progress-bar low";
         }
 
-        echo "</table>";
         echo "<div class='resumen'>";
         echo "<p><strong>Artículos vendidos:</strong> $contadorVendidos de $totalProductos</p>";
         echo "<p><strong>Total vendido:</strong> " . number_format($sumaVendidos, 2) . " €</p>";
@@ -79,5 +86,45 @@ $totalProductos = 0;
 </div>
 
 <script src="js/tema.js"></script>
+<script>
+function ordenarTabla(columna, th) {
+    const tabla = document.getElementById("tabla-productos");
+    const cuerpo = tabla.tBodies[0];
+    const filas = Array.from(cuerpo.rows);
+    const esNumero = columna === 0 || columna === 3;
+    let orden = tabla.getAttribute("data-orden") || "asc";
+    let ultimaCol = parseInt(tabla.getAttribute("data-columna") || "-1");
+
+    if (ultimaCol === columna) {
+        orden = orden === "asc" ? "desc" : "asc";
+    } else {
+        orden = "asc";
+    }
+
+    tabla.setAttribute("data-orden", orden);
+    tabla.setAttribute("data-columna", columna);
+
+    document.querySelectorAll("th").forEach(th => th.textContent = th.textContent.replace(/\s*[▲▼]$/, ""));
+
+    filas.sort((a, b) => {
+        let valA = a.cells[columna].textContent.trim();
+        let valB = b.cells[columna].textContent.trim();
+
+        if (esNumero) {
+            valA = parseFloat(valA.replace("€", "").replace(",", ".")) || 0;
+            valB = parseFloat(valB.replace("€", "").replace(",", ".")) || 0;
+        }
+
+        return orden === "asc"
+            ? (valA > valB ? 1 : valA < valB ? -1 : 0)
+            : (valA < valB ? 1 : valA > valB ? -1 : 0);
+    });
+
+    filas.forEach(fila => cuerpo.appendChild(fila));
+
+    th.textContent += orden === "asc" ? " ▲" : " ▼";
+}
+</script>
+
 </body>
 </html>
