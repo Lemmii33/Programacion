@@ -43,6 +43,6 @@
         });
     });
 </script>
-<script src="js/tema.js"></script>
+<script src="tema.js"></script>
 </body>
 </html>
