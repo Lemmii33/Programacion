@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <title>Gestión de Productos</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <script defer src="js/tema.js"></script>
 </head>
 <body>
-
 <div class="container">
     <h1>Panel de Gestión de Productos</h1>
 
@@ -23,9 +21,28 @@
     </div>
 
     <div style="text-align: center; margin-top: 40px;">
-        <button class="btn" onclick="alternarTema()">🌙 Cambiar tema</button>
+        <button class="btn" id="toggle-tema">🌙 Cambiar tema</button>
     </div>
 </div>
+
+<script>
+    // Alterna entre modo claro/oscuro
+    document.addEventListener("DOMContentLoaded", () => {
+        const body = document.body;
+        const btn = document.getElementById("toggle-tema");
+        const temaGuardado = localStorage.getItem("modo");
+
+        if (temaGuardado === "oscuro") {
+            body.classList.add("oscuro");
+        }
+
+        btn.addEventListener("click", () => {
+            body.classList.toggle("oscuro");
+            const nuevoModo = body.classList.contains("oscuro") ? "oscuro" : "claro";
+            localStorage.setItem("modo", nuevoModo);
+        });
+    });
+</script>
 
 </body>
 </html>
