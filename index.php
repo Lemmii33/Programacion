@@ -27,14 +27,13 @@ if (!isset($_SESSION["user_id"])) {
         <a class="btn" href="total_ventas.php">💰 Total de Ventas</a>
     </div>
 
-    <div style="text-align: center; margin-top: 40px;">
-        <button class="btn" onclick="alternarTema()">🌙 Cambiar tema</button>
-    </div>
-    <form action="logout.php" method="post">
-    <button type="submit">Cerrar sesión</button>
-</form>
-
+   <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 20px;">
+    <button class="btn" onclick="alternarTema()">🌙 Cambiar tema</button>
+    <form action="logout.php" method="post" style="display: inline;">
+        <button type="submit" class="btn">🚪 Cerrar sesión</button>
+    </form>
 </div>
+
 <script src="js/tema.js"></script>
 <script>
     // Alterna entre modo claro/oscuro

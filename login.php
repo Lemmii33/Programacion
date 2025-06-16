@@ -1,13 +1,8 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
-
 include 'conexion.php';
-$conexion= conectar();
 
+$conexion = conectar();
 $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -27,38 +22,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: index.php");
             exit;
         } else {
-            $error = "Contraseña incorrecta.";
+            $error = "❌ Contraseña incorrecta.";
         }
     } else {
-        $error = "Usuario no encontrado.";
+        $error = "❌ Usuario no encontrado.";
     }
 
     $stmt->close();
     $conexion->close();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login - REY CORPORACIÓN</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Iniciar Sesión - REY CORPORACIÓN</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body class="body_rey">
-    <div id="firma">
-        <div class="titulo_logo">
-            <img src="logo.png" alt="Logo">
-            <span>Acceso</span>
-        </div>
+    <div class="container" style="max-width: 400px; margin-top: 100px;">
+        <h1 style="text-align:center;">🔐 Iniciar Sesión</h1>
+
         <?php if ($error): ?>
-            <p style="color:red;"><?= htmlspecialchars($error) ?></p>
+            <p style="color: red; text-align: center;"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
-        <form method="post">
-            <p><input type="text" name="usuario" placeholder="Usuario" required></p>
-            <p><input type="password" name="clave" placeholder="Contraseña" required></p>
-            <p><input type="submit" value="Entrar"></p>
+
+        <form method="post" style="display: flex; flex-direction: column; gap: 15px; margin-top: 30px;">
+            <input type="text" name="usuario" placeholder="👤 Usuario" required class="btn" style="padding: 10px;">
+            <input type="password" name="clave" placeholder="🔑 Contraseña" required class="btn" style="padding: 10px;">
+            <button type="submit" class="btn">➡️ Entrar</button>
         </form>
+
+        <div style="margin-top: 40px; text-align:center;">
+            <button class="btn" onclick="alternarTema()" id="toggle-tema">🌙 Cambiar tema</button>
+        </div>
     </div>
+
+    <script src="js/tema.js"></script>
+    <script>
+        // Modo oscuro según preferencia guardada
+        document.addEventListener("DOMContentLoaded", () => {
+            const body = document.body;
+            const btn = document.getElementById("toggle-tema");
+            const temaGuardado = localStorage.getItem("modo");
+
+            if (temaGuardado === "oscuro") {
+                body.classList.add("oscuro");
+            }
+
+            btn.addEventListener("click", () => {
+                body.classList.toggle("oscuro");
+                const nuevoModo = body.classList.contains("oscuro") ? "oscuro" : "claro";
+                localStorage.setItem("modo", nuevoModo);
+            });
+        });
+    </script>
 </body>
 </html>
