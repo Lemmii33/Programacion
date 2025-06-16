@@ -19,8 +19,8 @@ if ($conn->connect_error) {
 }
 
 // ==== DATOS DEL NUEVO USUARIO ====
-$usuario = "admin";
-$password_plano = "12345";
+$usuario = "lemmi";
+$password_plano = "1234";
 
 // Hashear la contraseña
 $hash = password_hash($password_plano, PASSWORD_DEFAULT);
