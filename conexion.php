@@ -11,6 +11,6 @@ function conectar() {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    return $conn;
+    return $conexion;
 }
 
