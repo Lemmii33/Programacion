@@ -1,3 +1,6 @@
+/* =======================================
+   VARIABLES Y MODO OSCURO
+======================================= */
 :root {
     --fondo: #f4f6f8;
     --texto: #333;
@@ -29,6 +32,9 @@ body.oscuro {
     --btn-hover: #666;
 }
 
+/* =======================================
+   CONTENEDORES Y ENCABEZADOS
+======================================= */
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -40,6 +46,9 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
+/* =======================================
+   TABLAS
+======================================= */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -74,13 +83,11 @@ tr:nth-child(even) {
     font-weight: bold;
 }
 
-.resumen {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 1.1rem;
-}
-
+/* =======================================
+   BOTONES
+======================================= */
 .btn {
+    display: inline-block;
     padding: 10px 20px;
     background-color: var(--btn-bg);
     color: white;
@@ -88,26 +95,16 @@ tr:nth-child(even) {
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
+    font-size: 16px;
+    margin: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #ddd;
-    color: black;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    margin: 8px;
-    transition: background-color 0.2s;
+.btn:hover {
+    background-color: var(--btn-hover);
 }
 
-.btn:hover {
-    background-color: #ccc;
-}
 body.oscuro .btn {
     background-color: #bbb;
     color: #222;
@@ -117,11 +114,18 @@ body.oscuro .btn:hover {
     background-color: #aaa;
 }
 
-.btn:hover {
-    background-color: var(--btn-hover);
+/* =======================================
+   RESÚMENES
+======================================= */
+.resumen {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1rem;
 }
 
-/* Barra de progreso */
+/* =======================================
+   BARRA DE PROGRESO
+======================================= */
 .progress-container {
     width: 80%;
     max-width: 500px;
@@ -157,7 +161,6 @@ body.oscuro .btn:hover {
     background-color: #28a745;
 }
 
-/* Modo oscuro para barra */
 body.oscuro .progress-container {
     background-color: #444;
     border-color: #888;
