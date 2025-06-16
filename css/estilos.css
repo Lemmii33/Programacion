@@ -106,12 +106,12 @@ tr:nth-child(even) {
 }
 
 body.oscuro .btn {
-    background-color: #bbb;
-    color: #222;
+    background-color: #333;
+    color: #f0f0f0;
 }
 
 body.oscuro .btn:hover {
-    background-color: #aaa;
+    background-color: #555;
 }
 
 /* =======================================
