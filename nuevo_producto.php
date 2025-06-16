@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 <?php
 include 'conexion.php';
-
+$conexion= conectar();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];

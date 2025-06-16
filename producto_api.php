@@ -1,6 +1,6 @@
 <?php
 include 'conexion.php';
-
+$conexion= conectar();
 $input = json_decode(file_get_contents("php://input"), true);
 $response = ["ok" => false, "mensaje" => "Acción no válida."];
 

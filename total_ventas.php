@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include 'conexion.php';
-
+$conexion= conectar();
 $sql = "SELECT SUM(Precio) AS TotalVentas FROM productos WHERE Vendido = 1";
 $resultado = $conexion->query($sql);
 $fila = $resultado->fetch_assoc();

@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include 'conexion.php';
-
+$conexion= conectar();
 $resultado = $conexion->query("SELECT * FROM productos");
 $productos = $resultado->fetch_all(MYSQLI_ASSOC);
 $conexion->close();
