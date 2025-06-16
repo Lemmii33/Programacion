@@ -10,8 +10,8 @@ error_reporting(E_ALL);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conexion = conectar();
 
-    $username = $_POST["username"] ?? '';
-    $password = $_POST["password"] ?? '';
+    $username = $_POST["usuario"] ?? '';
+    $password = $_POST["clave"] ?? '';
 
     $stmt = $conexion->prepare("SELECT id, password FROM usuarios WHERE username = ?");
     $stmt->bind_param("s", $username);
