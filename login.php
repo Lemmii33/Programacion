@@ -100,7 +100,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="body_rey">
     <div id="firma">
         <div class="titulo_logo">
-            <img src="logo.png" alt="Logo"> <!-- Cambia la ruta si tu logo está en otra carpeta -->
+            <div class="titulo_logo" style="font-size: 1.5em;">
+    <span>🔒</span>
+    <span>Acceso</span>
+</div>
+
             <span>Acceso</span>
         </div>
 
