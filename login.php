@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["usuario"] ?? '';
     $password = $_POST["clave"] ?? '';
 
-    $stmt = $conexion->prepare("SELECT id, password FROM usuarios WHERE username = ?");
+    $stmt = $conexion->prepare("SELECT id, clave FROM usuarios WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
