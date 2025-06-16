@@ -41,13 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Login - REY CORPORACIÓN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <style>
         body {
             margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         #firma {
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .titulo_logo img {
-            width: 60px;
+            height: 60px;
         }
 
         form input[type="text"],
@@ -74,9 +74,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         form input[type="submit"],
         .btn {
             width: 100%;
-            padding: 12px;
             margin-bottom: 15px;
+            padding: 12px;
             font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .error-msg {
+            color: red;
+            margin-bottom: 15px;
         }
 
         @media (max-width: 480px) {
@@ -86,20 +92,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             .titulo_logo img {
-                width: 50px;
+                height: 50px;
             }
-        }
-
-        .error-msg {
-            color: red;
-            margin-bottom: 15px;
         }
     </style>
 </head>
 <body class="body_rey">
     <div id="firma">
         <div class="titulo_logo">
-            <img src="logo.png" alt="Logo">
+            <img src="logo.png" alt="Logo"> <!-- Cambia la ruta si tu logo está en otra carpeta -->
             <span>Acceso</span>
         </div>
 
@@ -113,10 +114,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="submit" value="➡️ Entrar" class="btn">
         </form>
 
-        <button class="btn" onclick="alternarTema()" id="toggle-tema">🌙 Cambiar tema</button>
+        <button class="btn" id="toggle-tema">🌙 Cambiar tema</button>
     </div>
 
-    <script src="js/tema.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const body = document.body;
