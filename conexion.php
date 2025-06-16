@@ -5,7 +5,7 @@ function conectar() {
     $pass = "W4ll4p0p@";
     $db = "Ventas";
 
-    $conn = new mysqli($host, $user, $pass, $db);
+    $conexion = new mysqli($host, $user, $pass, $db);
 
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
