@@ -1,25 +1,20 @@
 <?php
 session_start();
-require_once 'conexion.php';
+include 'conexion.php';
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+$error = "";
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $conexion = conectar();
-
-    $username = $_POST["usuario"] ?? '';
-    $password = $_POST["clave"] ?? '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $usuario = trim($_POST['usuario']);
+    $password = trim($_POST['clave']);
 
     $stmt = $conexion->prepare("SELECT id, clave FROM usuarios WHERE usuario = ?");
-    $stmt->bind_param("s", $username);
+    $stmt->bind_param("s", $usuario);
     $stmt->execute();
     $stmt->store_result();
+    $stmt->bind_result($id, $hash);
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $hash);
         $stmt->fetch();
         if (password_verify($password, $hash)) {
             $_SESSION["user_id"] = $id;
@@ -41,15 +36,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Iniciar Sesión</title>
+    <title>Login - REY CORPORACIÓN</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
-<body>
-    <h2>Login</h2>
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <form method="post">
-        <label>Usuario:</label><input type="text" name="username" required><br>
-        <label>Contraseña:</label><input type="password" name="password" required><br>
-        <button type="submit">Entrar</button>
-    </form>
+<body class="body_rey">
+    <div id="firma">
+        <div class="titulo_logo">
+            <img src="logo.png" alt="Logo">
+            <span>Acceso</span>
+        </div>
+        <?php if ($error): ?>
+            <p style="color:red;"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
+        <form method="post">
+            <p><input type="text" name="usuario" placeholder="Usuario" required></p>
+            <p><input type="password" name="clave" placeholder="Contraseña" required></p>
+            <p><input type="submit" value="Entrar"></p>
+        </form>
+    </div>
 </body>
 </html>
