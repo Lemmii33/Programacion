@@ -1,12 +1,15 @@
 <?php
-$host = "localhost";
-$usuario = "producto";
-$contrasena = "W4ll4p0p@";
-$base_datos = "Ventas";
+function conectar() {
+    $host = "localhost";
+    $user = "producto";
+    $pass = "W4ll4p0p@";
+    $db = "producto";
 
-$conn = new mysqli($host, $usuario, $contrasena, $base_datos);
+    $conn = new mysqli($host, $user, $pass, $db);
 
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+    if ($conn->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
+    }
+
+    return $conn;
 }
-?>
