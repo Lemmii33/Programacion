@@ -3,6 +3,8 @@ session_start();
 require_once 'conexion.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $conexion = conectar();
+
     $username = $_POST["username"] ?? '';
     $password = $_POST["password"] ?? '';
 
@@ -10,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
-    $conexion = conectar();
 
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($id, $hash);
@@ -25,21 +26,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $error = "Usuario no encontrado.";
     }
+
+    $stmt->close();
+    $conexion->close();
 }
 ?>
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Iniciar Sesión</title>
 </head>
 <body>
-    <h2>Iniciar sesión</h2>
+    <h2>Login</h2>
     <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
     <form method="post">
         <label>Usuario:</label><input type="text" name="username" required><br>
