@@ -7,7 +7,7 @@ function conectar() {
 
     $conexion = new mysqli($host, $user, $pass, $db);
 
-    if ($conn->connect_error) {
+    if ($conexion->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
