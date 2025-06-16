@@ -102,8 +102,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="titulo_logo">
             <div class="titulo_logo" style="font-size: 1.5em;">
     <span>🔒</span>
-    <span>Acceso</span>
-</div>
+    </div>
+
+            <span>Acceso</span>
+        </div>
 
         <?php if ($error): ?>
             <div class="error-msg"><?= htmlspecialchars($error) ?></div>
