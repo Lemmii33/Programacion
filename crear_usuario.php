@@ -12,7 +12,7 @@ $password_plano = '12345';
 $password_hash = password_hash($password_plano, PASSWORD_DEFAULT);
 
 // Insertar en la base de datos
-$stmt = $conexion->prepare("INSERT INTO usuarios (usuario, clave) VALUES (?, ?)");
+$stmt = $conn->prepare("INSERT INTO usuarios (usuario, clave) VALUES (?, ?)");
 $stmt->bind_param("ss", $usuario, $password_hash);
 $stmt->execute();
 
