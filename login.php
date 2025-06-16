@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
+    $conexion = conectar();
 
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($id, $hash);
