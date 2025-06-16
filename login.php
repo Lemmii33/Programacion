@@ -105,9 +105,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <span>Acceso</span>
 </div>
 
-            <span>Acceso</span>
-        </div>
-
         <?php if ($error): ?>
             <div class="error-msg"><?= htmlspecialchars($error) ?></div>
         <?php endif; ?>
