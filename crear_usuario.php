@@ -11,11 +11,11 @@ $user = "producto";                // o tu usuario
 $pass = "W4ll4p0p@";                    // contraseña de MySQL
 
 // Conexión
-$conn = new mysqli($host, $user, $pass, $db);
+$conexion = new mysqli($host, $user, $pass, $db);
 
 // Verificar conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
 
 // ==== DATOS DEL NUEVO USUARIO ====
@@ -26,9 +26,9 @@ $password_plano = "1234";
 $hash = password_hash($password_plano, PASSWORD_DEFAULT);
 
 // Insertar en la tabla
-$stmt = $conn->prepare("INSERT INTO usuarios (usuario, clave) VALUES (?, ?)");
+$stmt = $conexion->prepare("INSERT INTO usuarios (usuario, clave) VALUES (?, ?)");
 if (!$stmt) {
-    die("Error al preparar consulta: " . $conn->error);
+    die("Error al preparar consulta: " . $conexion->error);
 }
 
 $stmt->bind_param("ss", $usuario, $hash);
@@ -42,5 +42,5 @@ if ($stmt->affected_rows === 1) {
 }
 
 $stmt->close();
-$conn->close();
+$conexion->close();
 ?>

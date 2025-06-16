@@ -2,11 +2,11 @@
 include 'conexion.php';
 
 $sql = "SELECT SUM(Precio) AS TotalVentas FROM productos WHERE Vendido = 1";
-$resultado = $conn->query($sql);
+$resultado = $conexion->query($sql);
 $fila = $resultado->fetch_assoc();
 $total = $fila['TotalVentas'] ?? 0;
 
-$conn->close();
+$conexion->close();
 ?>
 
 <!DOCTYPE html>

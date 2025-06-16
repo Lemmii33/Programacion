@@ -2,7 +2,7 @@
 include 'conexion.php';
 
 $sql = "SELECT Id, Nombre, Descripcion, Precio, Vendido FROM productos";
-$resultado = $conn->query($sql);
+$resultado = $conexion->query($sql);
 
 $sumaVendidos = 0;
 $sumaTotal = 0;
@@ -76,7 +76,7 @@ $totalProductos = 0;
         echo "<div class='resumen'>No hay productos en la base de datos.</div>";
     }
 
-    $conn->close();
+    $conexion->close();
     ?>
 
     <div style="text-align: center; margin-top: 30px;">

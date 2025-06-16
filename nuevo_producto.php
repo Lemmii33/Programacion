@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $precio = floatval($_POST['precio']);
     $vendido = isset($_POST['vendido']) ? 1 : 0;
 
-    $stmt = $conn->prepare("INSERT INTO productos (Nombre, Descripcion, Precio, Vendido) VALUES (?, ?, ?, ?)");
+    $stmt = $conexion->prepare("INSERT INTO productos (Nombre, Descripcion, Precio, Vendido) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssdi", $nombre, $descripcion, $precio, $vendido);
 
     if ($stmt->execute()) {
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $stmt->close();
-    $conn->close();
+    $conexion->close();
 }
 ?>
 

@@ -1,9 +1,9 @@
 <?php
 include 'conexion.php';
 
-$resultado = $conn->query("SELECT * FROM productos");
+$resultado = $conexion->query("SELECT * FROM productos");
 $productos = $resultado->fetch_all(MYSQLI_ASSOC);
-$conn->close();
+$conexion->close();
 ?>
 
 <!DOCTYPE html>
