@@ -30,6 +30,10 @@ if (!isset($_SESSION["user_id"])) {
     <div style="text-align: center; margin-top: 40px;">
         <button class="btn" onclick="alternarTema()">🌙 Cambiar tema</button>
     </div>
+    <form action="logout.php" method="post">
+    <button type="submit">Cerrar sesión</button>
+</form>
+
 </div>
 <script src="js/tema.js"></script>
 <script>
