@@ -3,7 +3,7 @@ function conectar() {
     $host = "localhost";
     $user = "producto";
     $pass = "W4ll4p0p@";
-    $db = "Ventas";
+    $db = "lemmif_ventas";
 
     $conexion = new mysqli($host, $user, $pass, $db);
 
