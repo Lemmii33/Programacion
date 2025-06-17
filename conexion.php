@@ -1,9 +1,9 @@
 <?php
 function conectar() {
     $host = "localhost";
-    $user = "root";
-    $pass = "!!Ypunto33!!";
-    $db = "lemmif_ventas";
+    $user = "producto";
+    $pass = "W4ll4p0p@";
+    $db = "Ventas";
 
     $conexion = new mysqli($host, $user, $pass, $db);
 
