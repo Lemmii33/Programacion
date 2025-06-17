@@ -1,7 +1,7 @@
 <?php
 function conectar() {
     $host = "localhost";
-    $user = "lemmif_root";
+    $user = "root";
     $pass = "!!Ypunto33!!";
     $db = "lemmif_ventas";
 
